@@ -58,12 +58,46 @@ FreeRTOS optimized data passing mechanisms for single-producer/single-consumer s
 
 ## RTIC-Specific Mechanisms
 
-[13. **Event Groups**](docs/05_counting_semaphores.md)<br>
+[15. **Resource Locking via RTFM Protocol**](docs/15_rtic_resource_locking.md)<br>
+RTIC's unique approach using Stack Resource Policy (SRP) where resources are protected by raising the priority ceiling rather than traditional locks. This provides deadlock-free guarantees at compile time.
+
+[16. **Software Tasks**](docs/16_rtic_software_tasks.md)<br>
+RTIC's message-passing mechanism where tasks communicate via queues with compile-time capacity checking.
+
+[17. **Lock-free resource access**](docs/17_rtic_lock_free_resource_access.md)<br>
+RTIC can prove at compile time when resources don't need locks because only one task can access them.
+
+
 
 ## Embassy-Specific Mechanisms
 
-[14. **Stream Buffers and Message Buffers**](docs/05_counting_semaphores.md)<br>
+[18. **Async Channels**](docs/18_embassy_async_channels.md)<br>
+Embassy's message-passing primitives (embassy_sync::channel) that work with Rust's async/await, supporting both bounded and unbounded variants.
+
+[19. **Signals**](docs/19_signals.md)<br>
+Embassy's lightweight notification mechanism (embassy_sync::signal::Signal) for waking async tasks.
+
+[20. **Watch/WatchBehavior**](docs/20_watch_watchbehavior.md)<br>
+Embassy primitives for broadcasting state changes to multiple subscribers
+
+[21. **Async Mutex/RwLock**](docs/21_async_mutex_rwlock.md)<br>
+Embassy provides async-aware locks that yield rather than block, integrating with the async executor.
+
+
 
 ## Advanced/Specialized Mechanisms
 
-[6. ** **](docs/05_counting_semaphores.md)<br>
+[22. **Memory Barriers**](docs/22_memory_barriers.md)<br>
+Hardware-level synchronization (found in Linux kernel programming with smp_mb(), smp_rmb(), smp_wmb()). FreeRTOS and bare-metal systems use architecture-specific barriers.
+
+[23. **Atomic Operations**](docs/23_atomic_operations.md)<br>
+Lock-free primitives available across all systems. Linux uses atomic_t and atomic64_t, Rust (RTIC/Embassy) has std::sync::atomic types, FreeRTOS often relies on architecture-specific atomics or critical sections.
+
+[24. **Reader-Writer Locks**](docs/24_reader_writer_locks.md)<br>
+Allow multiple readers or single writer. Linux has pthread_rwlock and kernel rwlock_t/rwsem. Less common in smaller RTOSes but Embassy provides async RwLock.
+
+[25. **Condition Variables**](docs/25_condition_variables.md)<br>
+For complex waiting conditions. Available in Linux (pthread_cond_t), less common in minimal RTOSes like FreeRTOS (though can be built from primitives), and Embassy has async equivalents.
+
+[26. **Barriers**](docs/26_barriers.md)<br>
+Synchronize groups of threads/tasks at a point. Linux has pthread_barrier_t, can be constructed in FreeRTOS from semaphores, less relevant in RTIC's task model.
