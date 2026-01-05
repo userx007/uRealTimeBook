@@ -101,3 +101,22 @@ For complex waiting conditions. Available in Linux (pthread_cond_t), less common
 
 [26. **Barriers**](docs/26_barriers.md)<br>
 Synchronize groups of threads/tasks at a point. Linux has pthread_barrier_t, can be constructed in FreeRTOS from semaphores, less relevant in RTIC's task model.
+
+[27. **Linux special system calls**](docs/27_linux_system_calls.md)<br>
+Summary for the topics below
+
+[28. **I/O Multiplexing in Linux**](docs/28_io_multiplexing_in_linux.md)<br>
+epoll (epoll_create, epoll_ctl, epoll_wait), pselect, ppoll, io_uring (io_uring_setup, io_uring_enter)
+
+[29. **Memory Mapping in Linux**](docs/29_memory_mapping_in_linux.md)<br>
+munmap, mprotect, msync, mremap, madvise, mlock/munlock, mincore, memfd_create
+
+[30. **Direct I/O and Zero-Copy in Linux**](docs/30_direct_io_and_zero_copy_in_linux.md)<br>
+sendfile, splice, tee, vmsplice
+
+
+[31. **Asynchronous I/O in Linux**](docs/31_asynchronous_io_in_linux.md)<br>
+aio_read/aio_write, aio_suspend, io_submit/io_getevents
+
+[32. **File Monitoring in Linux**](docs/32_file_monitoring_in_linux.md)<br>
+inotify, fanotify
