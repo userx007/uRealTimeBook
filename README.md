@@ -1,5 +1,11 @@
 # uRealTimeBook
 
+
+## Generics
+
+[0. **Processes, Threads, and Tasks in Real-Time Programming**](docs/00_proc_thread_task.md)<br>
+Definitions, analogies, examples
+
 [1. **Real-Time Synchronization Mechanisms**](docs/01_real_time_synchronization_mechanisms.md)<br>
 A comprehensive overview of synchronization mechanisms used in real-time operating systems, organized by their general availability and specific implementations: 
 
