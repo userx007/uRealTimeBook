@@ -126,3 +126,11 @@ aio_read/aio_write, aio_suspend, io_submit/io_getevents
 
 [32. **File Monitoring in Linux**](docs/32_file_monitoring_in_linux.md)<br>
 inotify, fanotify
+
+## Miscelaneous
+
+[33. **Synchronizing between separate processes in Linux**](docs/33_synchronizing_between_separate_processes_in_linux.md)<br>
+Description and comprehensive examples for all major synchronization mechanisms
+
+[34. **Thread Synchronization in Linux**](docs/34_thread_synchronization_in_linux.md)<br>
+Description and comprehensive examples for all major synchronization mechanisms

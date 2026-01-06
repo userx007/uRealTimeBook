@@ -1,7 +1,5 @@
 # Processes, Threads, and Tasks in Real-Time Programming
 
-Let me break down these concepts with clear explanations and relatable analogies.
-
 ## **Processes**
 
 ### What they are:
